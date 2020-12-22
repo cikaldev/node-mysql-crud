@@ -1,5 +1,7 @@
 # Node MySQL (CRUD)
 
+![Screenshoot](screenshoot.png)
+
 Contekan buat temen-temen yang mau latihan, belajar program dasar dengan menggunakan NodeJS dan Database.
 
 Dependencies / modul yang akan kita gunakan:
