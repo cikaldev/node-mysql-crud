@@ -1,0 +1,25 @@
+{
+  "name": "node-mysql-crud",
+  "version": "1.0.0",
+  "description": "Operasi dasar CRUD NodeJS + MySQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "mysql2",
+    "express",
+    "ejs",
+    "crud",
+    "javascript",
+    "indonesia"
+  ],
+  "author": "Ian Cikal",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5"
+  }
+}

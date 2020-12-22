@@ -1,0 +1,31 @@
+<%- include('header') %>
+<h1>List Guru</h1>
+<p><a href="/tambah">Tambah Data</a></p>
+<table>
+  <thead>
+    <tr>
+      <th>Nama Guru</th>
+      <th>Mapel</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if (guru.length) { %>
+      <% guru.forEach((val, key) => { %>
+        <tr>
+          <td><%=val.nama%></td>
+          <td><%=val.mapel%></td>
+          <td align="center">
+            <a href="/edit/<%=val.id%>">Edit</a> | 
+            <a href="/hapus/<%=val.id%>" onclick="return confirm('Anda yakin ingin hapus data?')">Hapus</a>
+          </td>
+        </tr>
+      <% }); %>
+    <% } else { %>
+      <tr>
+        <td colspan="3" align="center">-- data masih kosong --</td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+<%- include('footer') %>
