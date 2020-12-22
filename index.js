@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'views')));
 
-
+// proses menampilkan data (READ)
 app.get('/', (req, res, next) => {
   db.query("select * from guru order by nama asc", (err, rows) => {
     if (err) {
@@ -19,6 +19,7 @@ app.get('/', (req, res, next) => {
   });
 });
 
+// proses tambah data (CREATE)
 app.all('/tambah', (req, res, next) => {
   if (req.method == 'POST') {
     const { nama, mapel } = req.body;
@@ -36,7 +37,7 @@ app.all('/tambah', (req, res, next) => {
   }
 });
 
-
+// proses edit data (UPDATE)
 app.all('/edit/:guruId', (req, res, next) => {
   if (req.method == 'POST') {
     const { nama, mapel } = req.body;
@@ -61,7 +62,7 @@ app.all('/edit/:guruId', (req, res, next) => {
   }
 });
 
-
+// proses hapus data (DELETE)
 app.get('/hapus/:guruId', (req, res, next) => {
   db.execute(
     "delete from guru where id=?",
@@ -76,20 +77,5 @@ app.get('/hapus/:guruId', (req, res, next) => {
   )
 })
 
+// running program
 app.listen(PORT, ()=>console.log(`Aplikasi jalan di port ${PORT}`));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
